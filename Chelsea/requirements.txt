@@ -1,0 +1,41 @@
+# other
+psutil~=5.9.8
+PyYAML~=6.0.1
+
+# related to stremalit
+streamlit-mic-recorder==0.0.4
+streamlit-TTS
+streamlit~=1.33.0
+
+# related to streamlit-TTS
+python-dotenv
+gTTS
+pydub
+openai
+ffprobe
+
+# related to huggingface
+torch~=2.2.0
+transformers~=4.40.1
+accelerate
+sentence-transformers
+bitsandbytes
+einops
+
+#gemini-langchain
+langchain_google_genai
+
+# related to langchain
+langchain~=0.1.17
+langchain-community
+pypdf
+chromadb
+
+# related to audio
+librosa==0.10.1
+soundfile~=0.12.1
+numpy~=1.24.4
+
+#related to vlm
+google-generativeai
+pillow

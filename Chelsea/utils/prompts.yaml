@@ -1,0 +1,180 @@
+# https://www.promptingguide.ai/techniques/
+
+# Add more examples of the template here, id should be an interval from 0 to 1000 
+# The description provides a basic overview of the template, the description should include the level of difficulty, 
+# the name of the prompting method and end with the word "prompt", e.g. "short prompt" or "zero-shot thought chain prompt
+# The prompt is rated from 0 to 10
+# common purpose means that the prompt fits for all situations
+
+prompts:
+  - id: 0
+    prompt_template: |
+        Instruction: You are a voice assistant named Chelsea, you will enjoy helping people, your main task is to help people with their questions and maintain a dialogue with them.
+        Question: {entity}
+        Answer:
+    description: main prompt
+    rate: 8
+    purpose: ['common']
+
+  - id: 1
+    prompt_template: |
+        Instruction: just give a response
+        Question: {entity}
+        Answer: 
+    description: a simple prompt
+    rate: 1
+    purpose: ['common']
+
+  - id: 2
+    prompt_template: |
+        Instruction: Write a concise answer on the question with one example if it's possible. CONCISE ANSWER.
+        Question: {entity}
+        Answer: 
+    description: concise prompt
+    rate: 3
+    purpose: ['common']
+
+# useful for solving simple math task 
+  - id: 3
+    prompt_template: |
+        Instruction: Let's think step by step.
+        Question: {entity}
+        Answer: 
+    description: zero-shot chain-of-thoughts prompt
+    rate: 4
+    purpose: ['math', 'physics', 'technology']
+
+# another one example for solving simple math task 
+  - id: 4
+    prompt_template: |
+        Instruction:       
+            Q: Roger has 5 tennis balls. He buys 2 more cans of tennis balls.
+               Each can has 3 tennis balls. How many tennis balls does he have now?
+            A: Roger started with 5 balls. 2 cans of 3 tennis balls each is 6 tennis balls. 5 + 6 = 11. The answer is 11.
+        Question: {entity}
+        Answer:
+    description: few-shot chain-of-thoughts prompt
+    rate: 4
+    purpose: ['riddles']
+    
+  - id: 5
+    prompt_template: |
+        Instruction: 
+            Q: There are 15 trees in the grove. Grove workers will plant trees in the grove today. After they are done,
+               there will be 21 trees. How many trees did the grove workers plant today?
+            A: We start with 15 trees. Later we have 21 trees. The difference must be the number of trees they planted.
+               So, they must have planted 21 - 15 = 6 trees. The answer is 6.
+            Q: If there are 3 cars in the parking lot and 2 more cars arrive, how many cars are in the parking lot?
+            A: There are 3 cars in the parking lot already. 2 more arrive. Now there are 3 + 2 = 5 cars. The answer is 5.
+            Q: Leah had 32 chocolates and her sister had 42. If they ate 35, how many pieces do they have left in total?
+            A: Leah had 32 chocolates and Leah`s sister had 42. That means there were originally 32 + 42 = 74
+               chocolates. 35 have been eaten. So in total they still have 74 - 35 = 39 chocolates. The answer is 39.
+            Q: Jason had 20 lollipops. He gave Denny some lollipops. Now Jason has 12 lollipops. How many lollipops
+               did Jason give to Denny?
+            A: Jason had 20 lollipops. Since he only has 12 now, he must have given the rest to Denny. The number of
+               lollipops he has given to Denny must have been 20 - 12 = 8 lollipops. The answer is 8.
+            Q: Shawn has five toys. For Christmas, he got two toys each from his mom and dad. How many toys does
+               he have now?
+            A: He has 5 toys. He got 2 from mom, so after that he has 5 + 2 = 7 toys. Then he got 2 more from dad, so
+               in total he has 7 + 2 = 9 toys. The answer is 9.
+            Q: There were nine computers in the server room. Five more computers were installed each day, from
+               monday to thursday. How many computers are now in the server room?
+            A: There are 4 days from monday to thursday. 5 computers were added each day. That means in total 4 * 5 =
+               20 computers were added. There were 9 computers in the beginning, so now there are 9 + 20 = 29 computers.
+               The answer is 29.
+            Q: Michael had 58 golf balls. On tuesday, he lost 23 golf balls. On wednesday, he lost 2 more. How many
+               golf balls did he have at the end of wednesday?
+            A: Michael initially had 58 balls. He lost 23 on Tuesday, so after that he has 58 - 23 = 35 balls. On
+               Wednesday he lost 2 more so now he has 35 - 2 = 33 balls. The answer is 33.
+            Q: Olivia has $23. She bought five bagels for $3 each. How much money does she have left?
+            A: She bought 5 bagels for $3 each. This means she spent $15. She has $8 left.
+        Question: {entity}
+        Answer: 
+    description: self-consistency prompt
+    rate: 6
+    purpose: ['riddles']
+
+  - id: 6
+    prompt_template: |
+        Instruction: Ти - голосовий помічник на імʼя Челсі, ти отримаєш задоволення від допомоги людям, твоя основна задача допомогати людям з їхніми питаннями та підтримувати з ними діалог.
+        Question: {entity}
+        Answer:
+    description: main prompt in ukrainian
+    rate: 8
+    purpose: ['загальні']
+
+  - id: 7
+    prompt_template: |
+        Instruction: просто дайте відповідь
+        Question: {entity}
+        Answer: 
+    description: a simple prompt in ukrainian
+    rate: 1
+    purpose: ['загальні']
+
+  - id: 8
+    prompt_template: |
+        Instruction: Напишіть лаконічну відповідь на питання з одним прикладом, якщо це можливо. ЛАКОНІЧНА ВІДПОВІДЬ.
+        Question: {entity}
+        Answer: 
+    description: concise prompt in ukrainian
+    rate: 3
+    purpose: ['загальні']
+
+  - id: 9
+    prompt_template: |
+        Instruction: Подумаймо про це поетапно.
+        Question: {entity}
+        Answer: 
+    description: zero-shot chain-of-thoughts prompt n ukrainian
+    rate: 4
+    purpose: ['математика', 'фізика', 'технології']
+
+  - id: 10
+    prompt_template: |
+        Instruction:       
+            З: У Роджера є 5 тенісних м'ячів. Він купує ще 2 банки тенісних м'ячів.
+               У кожній банці по 3 м'ячики. Скільки тенісних м'ячів у нього тепер?
+            В: Спочатку у Роджера було 5 м'ячів. 2 банки по 3 м'ячі в кожній - це 6 м'ячів. 5 + 6 = 11. Відповідь: 11.
+        Question: {entity}
+        Answer:
+    description: few-shot chain-of-thoughts prompt in ukrainian
+    rate: 4
+    purpose: ['загадки']
+
+  - id: 11
+    prompt_template: |
+        Instruction: 
+            З: У гаю росте 15 дерев. Працівники гаю сьогодні будуть садити дерева в гаю. Після того, як вони закінчать,
+               там буде 21 дерево. Скільки дерев працівники гаю посадили сьогодні?
+            В: Ми почали з 15 дерев. Пізніше у нас буде 21 дерево. Різниця має дорівнювати кількості посаджених дерев.
+               Отже, вони посадили 21 - 15 = 6 дерев. Відповідь: 6.
+            З: Якщо на стоянці є 3 машини і приїжджають ще 2 машини, скільки машин буде на стоянці?
+            В: На стоянці вже є 3 машини. Приїхало ще 2. Тепер на стоянці 3 + 2 = 5 машин. Відповідь: 5.
+            З: У Лії було 32 шоколадки, а у її сестри - 42. Якщо вони з'їли 35, то скільки цукерок залишилося у них разом?
+            В: У Лії було 32 шоколадки, а у її сестри - 42. Це означає, що спочатку було 32 + 42 = 74
+               шоколадних цукерок. 35 з'їли. Отже, разом у них залишилося 74 - 35 = 39 цукерок. Відповідь: 39.
+            З: У Джейсона було 20 льодяників. Він дав Денні кілька льодяників. Тепер у Джейсона залишилося 12 льодяників. Скільки льодяників
+               Джейсон дав Денні?
+            В: У Джейсона було 20 льодяників. Оскільки зараз у нього залишилося тільки 12, то решту він, мабуть, віддав Денні. Кількість льодяників, які
+               льодяників, які він віддав Денні, має бути 20 - 12 = 8 льодяників. Відповідь: 8 льодяників.
+            З: У Шона є п'ять іграшок. На Різдво він отримав по дві іграшки від мами і тата.  Скільки іграшок
+               у нього зараз?
+            В: У нього 5 іграшок. Дві він отримав від мами, тож тепер у нього 5 + 2 = 7 іграшок. Потім він отримав ще 2 від тата, тож
+               разом у нього 7 + 2 = 9 іграшок. Відповідь: 9.
+            З: У серверній кімнаті було дев'ять комп'ютерів. Щодня, з понеділка по четвер, встановлювали ще по п'ять комп'ютерів.
+               понеділка по четвер. Скільки комп'ютерів тепер стоїть у серверній?
+            В: З понеділка по четвер - 4 дні. Кожного дня додавалося по 5 комп'ютерів. Це означає, що загалом 4 * 5 =
+               20 комп'ютерів. На початку було 9 комп'ютерів, тож тепер їх 9 + 20 = 29.
+               Відповідь: 29.
+            З: У Михайла було 58 м'ячів для гольфу. У вівторок він загубив 23 м'ячики. У середу він загубив ще 2 м'ячики. Скільки
+               м'ячиків для гольфу у нього було наприкінці середи?
+            В: Спочатку у Михайла було 58 м'ячиків. У вівторок він втратив 23 м'ячі, тому після цього у нього залишилося 58 - 23 = 35 м'ячів. У середу
+               У середу він втратив ще 2 м'ячі, тому тепер у нього залишилося 35 - 2 = 33 м'ячі. Відповідь: 33.
+            З: У Олівії є $23. Вона купила п'ять бубликів по $3 за штуку. Скільки грошей у неї залишилося?
+            В: Вона купила 5 бубликів по $3 за штуку. Це означає, що вона витратила $15. У неї залишилося $8.
+        Question: {entity}
+        Answer: 
+    description: self-consistency prompt in ukrainian
+    rate: 6
+    purpose: ['загадки']
